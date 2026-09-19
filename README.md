@@ -1,62 +1,79 @@
-# Base44 Project
+# AgriLoop
 
-Use this repository to run and edit the app locally, then publish changes back through Base44.
+### Smart Agricultural Waste-to-Biochar & Energy Recovery System
 
-Any change pushed to the repo will also be reflected in the Base44 Builder.
+AgriLoop is an innovative environmental technology system designed to transform agricultural waste into useful products such as biochar and recoverable energy through a controlled thermal conversion process.
 
-## Prerequisites
+## 🌱 About AgriLoop
 
-1. Clone the repository using the project's Git URL.
-2. Navigate to the project directory.
-3. Install dependencies: `npm install`.
-4. Install the Base44 CLI: `npm install -g base44@latest`.
-5. Install [Deno](https://docs.deno.com/runtime/getting_started/installation/) — the local Base44 backend runs on it.
+Agricultural waste is often burned or disposed of, which can contribute to air pollution and environmental problems.
 
-Run `base44 --help` (or see the [CLI reference](https://docs.base44.com/developers/references/cli/commands/introduction)) for the full command surface.
+AgriLoop provides a smarter approach by using a controlled reactor system to process agricultural biomass and convert it into valuable outputs.
 
-## Run Locally
+## ⚙️ How It Works
 
-Three commands, from the project root:
+1. Agricultural waste is collected.
+2. The biomass is prepared and placed inside the reactor.
+3. Sensors monitor important conditions such as temperature and moisture.
+4. The ESP32 collects sensor data and monitors the system.
+5. The thermal conversion process produces biochar and gases.
+6. The resulting data can be displayed through the AgriLoop web interface.
 
-```bash
-base44 login   # one-time per machine
-base44 link    # one-time per clone
-base44 dev     # local backend + frontend together
-```
+## 🔬 Main Components
 
-Open the frontend URL that `base44 dev` prints (typically `http://localhost:5173`).
+- Reactor / Furnace
+- ESP32
+- Temperature Sensors
+- Moisture Sensor
+- Gas Sensors
+- Agricultural Biomass
+- Monitoring Dashboard
 
-Notes:
+## 📡 Sensors & ESP32
 
-- **Every fresh clone needs `base44 link`.** It writes `base44/.app.jsonc` (the app-id pointer), which is deliberately gitignored. Your app id is in the Builder URL (`app.base44.com/apps/<id>/...`); `base44 link --help` shows the non-interactive flags.
-- **`base44 dev` runs the frontend for you** (via `site.serveCommand` in this repo's `base44/config.jsonc`) — never run `npm run dev` yourself: alone it serves a UI with no backend behind it (`[base44] Proxy not enabled`, every `/api` call fails), and alongside `base44 dev` the second Vite silently takes the next port and you end up looking at the wrong one.
-- **The app must be published at least once for the UI to load under `base44 dev`.** The frontend boots by fetching app settings from the hosted app; before the first publish that fails and every page redirects to login. The local API works regardless.
-- Entities, functions, and auth run locally — entity data is **in-memory only**, wiped when `base44 dev` restarts. Everything else (Core integrations, OAuth login) is forwarded to your deployed app. Full breakdown: [Local development overview](https://docs.base44.com/developers/backend/overview/local-dev/local-development-overview).
+The ESP32 acts as the main monitoring controller.
 
-## Frontend Only, Hosted Backend
+It receives data from the sensors and can be used to monitor:
 
-To work on just the frontend against your app's live hosted backend:
+- Temperature
+- Moisture
+- Gas conditions
+- Reactor status
 
-```bash
-base44 dev --remote
-```
+## ♻️ Expected Outputs
 
-⚠️ In this mode writes go to your app's **production data** — plain `base44 dev` keeps everything local.
+The AgriLoop system focuses on recovering useful outputs from agricultural waste:
 
-## Publish Your Changes
+- Biochar
+- Recoverable gases / energy
+- Environmental monitoring data
 
-After pushing your changes to git, open the Base44 dashboard and publish the app:
+## 💻 Website
 
-```bash
-base44 dashboard open
-```
+The AgriLoop website presents the project through an interactive interface showing:
 
-This repo syncs to Base44 through git, so publish from the dashboard rather than `base44 deploy` — a CLI deploy ships your local tree directly, bypassing the sync, and the deployed state silently diverges from the repo.
+- System overview
+- Reactor operation
+- Sensors
+- ESP32 monitoring
+- Experimental results
+- Environmental impact
 
-## Docs & Support
+## 🛠️ Technologies
 
-GitHub integration: [https://docs.base44.com/developers/app-code/local-development/github](https://docs.base44.com/developers/app-code/local-development/github)
+- React
+- JavaScript
+- Vite
+- Tailwind CSS
+- ESP32
+- Sensors
 
-Local development: [https://docs.base44.com/developers/backend/overview/local-dev/local-development-overview](https://docs.base44.com/developers/backend/overview/local-dev/local-development-overview)
+## 🌍 Our Mission
 
-Support: [https://app.base44.com/support](https://app.base44.com/support)
+To turn agricultural waste into valuable resources while reducing waste and supporting more sustainable agricultural practices.
+
+---
+
+## 👥 Project
+
+AgriLoop — Smart Agricultural Waste-to-Biochar & Energy Recovery System
