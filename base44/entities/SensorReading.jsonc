@@ -1,0 +1,62 @@
+{
+  "name": "SensorReading",
+  "type": "object",
+  "properties": {
+    "source_mode": {
+      "type": "string",
+      "enum": [
+        "manual",
+        "live",
+        "demo"
+      ],
+      "default": "manual"
+    },
+    "waste_type": {
+      "type": "string",
+      "default": "Rice Straw"
+    },
+    "t1": {
+      "type": "number",
+      "default": 0
+    },
+    "t2": {
+      "type": "number",
+      "default": 0
+    },
+    "t3": {
+      "type": "number",
+      "default": 0
+    },
+    "moisture": {
+      "type": "number",
+      "default": 0
+    },
+    "pressure": {
+      "type": "number",
+      "default": 0
+    },
+    "gas_flow": {
+      "type": "number",
+      "default": 0
+    },
+    "emission": {
+      "type": "number",
+      "default": 0
+    },
+    "oxygen": {
+      "type": "number",
+      "default": 0
+    },
+    "load": {
+      "type": "number",
+      "default": 0
+    },
+    "energy_recovered": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "source_mode"
+  ]
+}
